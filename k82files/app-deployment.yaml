@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-deployment
+  namespace: spring-app
+spec:
+  selector:
+    matchLabels:
+      app: test-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: testt-app
+    spec:
+      containers:
+        - name: test-app
+          image: dahamne/test-app:0.0.1
+          ports:
+            - containerPort: 8080
